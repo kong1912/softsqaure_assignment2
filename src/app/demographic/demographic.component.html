@@ -1,0 +1,24 @@
+<form [formGroup]="group">
+    <div>
+      <label for="name">Name:</label>
+      <input id="name" formControlName="name">
+    </div>
+    
+    <div>
+      <label for="surname">Surname:</label>
+      <input id="surname" formControlName="surname">
+    </div>
+  
+    <div>
+      <label for="birthdate">Birthdate:</label>
+      <input id="birthdate" formControlName="birthdate" type="date">
+    </div>
+  
+    <div>
+      <label for="age">Age:</label>
+      <input id="age" formControlName="age" type="number">
+    </div>
+  
+    <button type="submit" [disabled]="group.invalid">Submit</button>
+  </form>
+  

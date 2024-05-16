@@ -1,0 +1,18 @@
+<div [formGroup]="group" class="login-form">
+    <label for="email">Email</label>
+    <input type="text" id="email" formControlName="email">
+    <div *ngIf="email?.invalid && (email?.dirty || email?.touched)" class="error">
+      <div *ngIf="email?.errors?.['required']">Email is required.</div>
+      <div *ngIf="email?.errors?.['pattern']">Invalid email format.</div>
+    </div>
+    
+    <label for="password">Password</label>
+    <input type="password" id="password" formControlName="password">
+    <div *ngIf="password?.invalid && (password?.dirty || password?.touched)" class="error">
+      <div *ngIf="password?.errors?.['required']">Password is required.</div>
+      <div *ngIf="password?.errors?.['minlength']">Password must be at least 8 characters long.</div>
+      <div *ngIf="password?.errors?.['maxlength']">Password cannot be more than 100 characters long.</div>
+    </div>
+    
+    <button type="button" (click)="onSubmit()">Submit</button>
+  </div>
